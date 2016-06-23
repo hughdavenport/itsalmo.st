@@ -3,7 +3,7 @@
 ## Required
 * git client for tool download
 * ruby installed and available on the PATH
-* bundle gem installed, or the mechanize, json, and chronic gems installed
+* bundler gem installed
 
 ## Installation
 Download the files for installation

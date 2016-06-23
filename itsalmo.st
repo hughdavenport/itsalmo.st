@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 
-require 'mechanize'
-require 'date'
-require 'chronic'
+require 'rubygems'
+require 'bundler'
+Bundler.require
 
 name = ARGV.fetch(0, "currytime")
 day = ARGV.fetch(1, "Thursday")
@@ -18,7 +18,7 @@ agent.get(url, {"_" => now}) do |page|
 
   if result.empty?
     response = agent.post(url, {"name" => name, "expires" => expires})
-    pp JSON.parse(response.body)
+    puts "Event on next #{day} at 12pm"
     puts "http://itsalmo.st/##{name}"
   else
     puts "\"#{name}\" is already taken"
